@@ -24,7 +24,7 @@ const Login = () => {
             <h2 className="mx-auto">Login</h2>
             <Form.Control type='email' placeholder='Email' onChange={(e)=>updateLoginInfo
             ({...loginInfo,email:e.target.value})}/>
-            <Form.Control type='password' placeholder='Password' onChange={(e)=>updateLoginInfo
+            <Form.Control type='password' placeholder='Password' onChange={(e)=>updateLoginInf
             ({...loginInfo,password:e.target.value})}/>
             <Button varient="primary" type='submit' style={{width:"10rem"}}className="mx-auto">
               Login
