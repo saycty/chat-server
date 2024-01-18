@@ -2,17 +2,17 @@ import express from "express";
 import cors from "cors";
 import DB from "./db.js";
 import dotenv from "dotenv";
-import router from "./Routes/userRoutes.js";
-
+import userRoute from "./Routes/userRoute.js";
+import chatRoute from "./Routes/chatRoute.js";
 dotenv.config()
 DB(process.env.MONGO_URL);
 
 const app=express();
 app.use(express.json())
 app.use(cors());
+app.use("/api/users", userRoute);
+app.use("/api/chats", chatRoute);
 
-
-app.use("/api/users",router);
 //CRUD
 
 app.get('/',(req,res)=>{

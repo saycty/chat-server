@@ -4,7 +4,7 @@ import { Alert, Button, Form, Row, Col, Stack } from 'react-bootstrap';
 import { Authcontext } from '../context/Authcontext';
 
 const Register = () => {
-  const { registerInfo, updateregisterInfo, registerUser, registerError ,isRegisterLoading} = useContext(Authcontext);
+  const { registerInfo, updateRegisterInfo, registerUser, registerError ,isRegisterLoading} = useContext(Authcontext);
   return (
     <>
       <Form onSubmit={registerUser}>
@@ -19,17 +19,17 @@ const Register = () => {
             <Stack gap={3}>
               <h2 className="mx-auto">Register</h2>
               <Form.Control type='text' placeholder='Name'
-                onChange={(e) => updateregisterInfo(
+                onChange={(e) => updateRegisterInfo(
                   { ...registerInfo, name: e.target.value }
                 )}
               />
               <Form.Control type='email' placeholder='Email'
-                onChange={(e) => updateregisterInfo(
+                onChange={(e) => updateRegisterInfo(
                   { ...registerInfo, email: e.target.value }
                 )}
               />
               <Form.Control type='password' placeholder='Password'
-                onChange={(e) => updateregisterInfo(
+                onChange={(e) => updateRegisterInfo(
                   { ...registerInfo, password: e.target.value }
                 )}
               />

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Container, Nav, Navbar, Stack, Dropdown } from "react-bootstrap";
+import { Container, Nav, Navbar, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Authcontext } from "../context/Authcontext";
 
@@ -19,32 +19,20 @@ const NavBar = () => {
         )}
         <Nav>
           <Stack direction="horizontal" gap={3}>
-            {user ? (
-              <Dropdown>
-                <Dropdown.Toggle
-                  variant="light"
-                  id="dropdown-basic"
-                  className="link-light text-decoration-none"
-                >
-                  {user?.name}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item as={Link} to="/profile">
-                    Profile
-                  </Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item onClick={() => logoutUser()}>
-                    Logout
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            ) : (
+            {user && (
               <>
                 <Link
+                  onClick={() => logoutUser()}
                   to="/login"
                   className="link-light text-decoration-none"
                 >
+                  logout
+                </Link>
+              </>
+            )}
+            {!user && (
+              <>
+                <Link to="/login" className="link-light text-decoration-none">
                   login
                 </Link>
                 <Link
