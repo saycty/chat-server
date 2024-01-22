@@ -4,6 +4,8 @@ import DB from "./db.js";
 import dotenv from "dotenv";
 import userRoute from "./Routes/userRoute.js";
 import chatRoute from "./Routes/chatRoute.js";
+import messageRoute from "./Routes/messageRoute.js";
+
 dotenv.config()
 DB(process.env.MONGO_URL);
 
@@ -12,6 +14,7 @@ app.use(express.json())
 app.use(cors());
 app.use("/api/users", userRoute);
 app.use("/api/chats", chatRoute);
+app.use("/api/messages", messageRoute);
 
 //CRUD
 
