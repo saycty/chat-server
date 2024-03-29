@@ -6,11 +6,11 @@ import Login from "./pages/login.jsx";
 import NavBar from "./components/Navbar.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
-import { Authcontext } from "./context/Authcontext.jsx";
+import { AuthContext } from "./context/AuthContext.jsx";
 import { ChatContextProvider } from "./context/ChatContext.jsx";
 
 function App() {
-  const { user } = useContext(Authcontext);
+  const { user } = useContext(AuthContext);
   return (
     <ChatContextProvider user={user}>
       <NavBar />

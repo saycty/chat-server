@@ -1,8 +1,8 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { baseUrl, postRequest } from "../utils/services";
 
-export const Authcontext = createContext();
-export const Authcontextprovider = ({ children }) => {
+export const AuthContext = createContext();
+export const AuthContextprovider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [registerError, setRegisterError] = useState(null);
   const [isRegisterLoading, setIsRegisterLoading] = useState(false);
@@ -88,7 +88,7 @@ export const Authcontextprovider = ({ children }) => {
   }, []);
 
   return (
-    <Authcontext.Provider
+    <AuthContext.Provider
       value={{
         user,
         registerInfo,
@@ -105,6 +105,6 @@ export const Authcontextprovider = ({ children }) => {
       }}
     >
       {children}
-    </Authcontext.Provider>
+    </AuthContext.Provider>
   );
 };

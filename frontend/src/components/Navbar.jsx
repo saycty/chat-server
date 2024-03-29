@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Container, Nav, Navbar, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Authcontext } from "../context/Authcontext";
+import { AuthContext } from "../context/AuthContext";
 
 const NavBar = () => {
-  const { user, logoutUser } = useContext(Authcontext);
+  const { user, logoutUser } = useContext(AuthContext);
 
   return (
     <Navbar bg="dark" className="mb-4" style={{ height: "3.75rem" }}>

@@ -5,11 +5,11 @@ export const ChatContext = createContext();
 export const ChatContextProvider = ({ children, user }) => {
   const [userChats, setUserChats] = useState(null);
   const [isUserChatsLoading, setIsUserChatsLoading] = useState(false);
-  const [userChatsError, setUserChatsError] = useState(null);
+  const [userChatsError, setUsersChatsError] = useState(null);
 
   useEffect(() => {
     const getUserChats = async () => {
-      if (user?._id) {s
+      if (user?._id) {
         setIsUserChatsLoading(true);
         setUsersChatsError(null);
 
